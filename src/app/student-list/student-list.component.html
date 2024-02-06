@@ -1,0 +1,34 @@
+<section>
+  <div class="new-student">
+    <h2>Add a new student</h2>
+
+    <label for="name">Name and surname :</label>
+    <input type="text"  id="name" #name>
+
+    <label for="email">E-mail address :</label>
+    <input type="text"  id="email" #email>
+
+<!--    <button id="addButton" (click)="add(name.value, email.value);name.value=''; email.value=''">-->
+<!--      Add-->
+<!--    </button>-->
+
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name and surname</th>
+      <th>E-mail address</th>
+      <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students">
+      <td><a>{{student.id}}</a></td>
+      <td>{{student.name | uppercase}}</td>
+      <td><a href="mailto:{{student.email}}">{{student.email}}</a></td>
+      <td>{{student.phone}}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
