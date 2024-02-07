@@ -15,4 +15,26 @@ export class StudentListComponent implements OnInit {
     this.studentService.getStudents().subscribe((res :any) => this.students = res);
   }
 
+  add(name:string, email:string, phone:string){
+
+    name = name.trim();
+    email = email.trim();
+    phone = phone.trim();
+
+    // stop execution when fields are empty
+    if (!name || !email || !phone) {
+      return;
+    }
+
+    // Stop execution when e-mail address does not contain "@"
+    if (email.indexOf('@') < 1) {
+      return;
+    }
+
+    this.studentService.addStudent({ name, email, phone } as Student)
+      .subscribe((student:any) => {
+        this.students.push(student)
+      });
+  }
+
 }

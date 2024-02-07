@@ -8,9 +8,12 @@
     <label for="email">E-mail address :</label>
     <input type="text"  id="email" #email>
 
-<!--    <button id="addButton" (click)="add(name.value, email.value);name.value=''; email.value=''">-->
-<!--      Add-->
-<!--    </button>-->
+    <label for="phone">Phone :</label>
+    <input type="text"  id="phone" #phone>
+
+    <button id="addButton" (click)="add(name.value, email.value, phone.value);name.value=''; email.value=''; phone.value='';">
+      Add
+    </button>
 
   </div>
   <table>
