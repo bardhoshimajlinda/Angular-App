@@ -31,6 +31,9 @@
       <td>{{student.name | uppercase}}</td>
       <td><a href="mailto:{{student.email}}">{{student.email}}</a></td>
       <td>{{student.phone}}</td>
+      <td>
+        <button class="button button-red" (click)="delete(student.id)">Delete</button>
+      </td>
     </tr>
     </tbody>
   </table>

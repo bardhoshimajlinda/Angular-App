@@ -37,4 +37,8 @@ export class StudentListComponent implements OnInit {
       });
   }
 
+  delete(id:any){
+    this.students = this.students.filter(s => s.id !==id);
+  }
+
 }

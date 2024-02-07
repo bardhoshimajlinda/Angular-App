@@ -27,4 +27,8 @@ export class StudentService {
   addStudent(student: Student) {
     return this.http.post("https://jsonplaceholder.typicode.com/users", student, this.httpOptions);
   }
+
+  deleteStudent(id: number){
+    return this.http.post("https://jsonplaceholder.typicode.com/users", id, this.httpOptions);
+  }
 }
