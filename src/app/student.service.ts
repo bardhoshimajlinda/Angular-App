@@ -31,4 +31,13 @@ export class StudentService {
   deleteStudent(id: number){
     return this.http.post("https://jsonplaceholder.typicode.com/users", id, this.httpOptions);
   }
+
+  getStudent(id: any): Observable<Student>{
+    return this.http.get<Student>("https://jsonplaceholder.typicode.com/users/" + id)
+  }
+
+  updateStudent(student: Student): Observable<Student> {
+    const url = `https://jsonplaceholder.typicode.com/users/${student.id}`;
+    return this.http.put<Student>(url, student, this.httpOptions);
+  }
 }
