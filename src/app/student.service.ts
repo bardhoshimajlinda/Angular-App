@@ -3,10 +3,10 @@ import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 export interface Student {
-  id?:number;
+  id?: number;
   name: string;
   email: string;
-  phone:string;
+  phone: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -40,4 +40,5 @@ export class StudentService {
     const url = `https://jsonplaceholder.typicode.com/users/${student.id}`;
     return this.http.put<Student>(url, student, this.httpOptions);
   }
+
 }
